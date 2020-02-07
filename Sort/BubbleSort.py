@@ -1,13 +1,14 @@
 # encoding:utf-8
 
 def BubbleSort(Blist):
-    while True:
-        status=0
-        for i in range(len(Blist)-1):
-            if Blist[i]>Blist[i+1]:
-                Blist[i], Blist[i+1] = Blist[i+1], Blist[i]
-                status = 1
-        if not status:
+    len_num = len(Blist)
+    flag = True
+    for i in range(len_num):
+        for j in range(0, len_num-1-i):
+            if Blist[j] > Blist[j+1]:
+                Blist[j], Blist[j+1] = Blist[j+1], Blist[j]
+                flag = False
+        if flag:
             break
     return Blist
 
